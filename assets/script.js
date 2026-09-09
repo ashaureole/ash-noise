@@ -281,8 +281,6 @@
             vid.src = vids[vIdx].src;
             vid.poster = vids[vIdx].poster || "";
             vid.load();
-            hintLink.href = vids[vIdx].src;
-            hintLink.setAttribute("download", String(vids[vIdx].src).split("/").pop());
             setTimeout(function () { vid.play()["catch"](function () {}); }, 80);
           });
           seg.appendChild(b);
@@ -303,9 +301,15 @@
       wrap.appendChild(pb);
       pane.appendChild(wrap);
       var hint = el("p", "dv-hint");
-      hint.innerHTML = "建议佩戴耳机欣赏 · 点击画面播放 / 暂停 · <a href=\"" + esc(vids[0].src) + "\" download=\"" + esc(vids[0].src.split("/").pop()) + "\">下载 MP4 原片</a>";
+            hint.textContent = "建议佩戴耳机欣赏 · 点击画面播放 / 暂停";
       pane.appendChild(hint);
-      var hintLink = hint.querySelector("a");
+      if (w.source) {
+        var srcRow = el("p", "dv-src-row");
+        var srcBtn = el("a", "dv-src", "⬇ 下载源文件（原始高清 · 百度网盘）");
+        srcBtn.href = w.source; srcBtn.target = "_blank"; srcBtn.rel = "noopener";
+        srcRow.appendChild(srcBtn);
+        pane.appendChild(srcRow);
+      }
       return pane;
     }
 

@@ -538,6 +538,10 @@ section{scroll-margin-top:72px}
 .dv-play:hover{transform:translate(-50%,-50%) scale(1.07);background:var(--gold-2)}
 .dv-play.hide{display:none}
 .dv-hint{color:#8a9099;font-size:13px;text-align:center;padding:12px 0 8px;flex:0 0 auto}
+.dv-src-row{text-align:center;padding:6px 0 18px;flex:0 0 auto}
+.dv-src{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#15120b;font-weight:600;padding:9px 20px;border-radius:999px;font-size:13.5px;text-decoration:none;box-shadow:0 6px 18px rgba(201,138,46,.22);transition:transform .15s ease,box-shadow .15s ease}
+.dv-src:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(201,138,46,.38);color:#0a0c10}
+.dv-src-note{display:block;color:#8a9099;font-size:12px;margin-top:10px}
 
 /* --- concept pane --- */
 .pane-concept{background:radial-gradient(1000px 500px at 50% -8%,rgba(232,180,90,.07),transparent 60%),var(--bg);overflow:auto;align-items:center;padding:34px 20px}

@@ -55,6 +55,7 @@ window.PORTFOLIO = {
       desc: "强冲击与危机压迫：鹪木市丧尸爆发雨夜中的枪械手感、命中反馈与街道张力。",
       video: "video/AshNoise-生化危机9.mp4",
       poster: "video/posters/AshNoise-生化危机9.jpg",
+      source: "https://pan.baidu.com/s/1PAvey34ZGFf1jw0sae3NbA?pwd=dzv6",
       shot: "docs/re9/shot.jpg",
 
       conceptTitle: "生化危机9 · 声音设计理念",
@@ -68,6 +69,7 @@ window.PORTFOLIO = {
       desc: "以“扎实而克制”的动作质感构建格斗打击层次：身体命中 / 表层拍击 / 挥击风声。",
       video: "video/师父.mp4",
       poster: "video/posters/师父.jpg",
+      source: "https://pan.baidu.com/s/1PAvey34ZGFf1jw0sae3NbA?pwd=dzv6",
       shot: "docs/sifu/shot.jpg",
 
       conceptTitle: "师父 · 声音设计理念",
@@ -81,6 +83,7 @@ window.PORTFOLIO = {
       desc: "写实取向的中世纪沉浸氛围：以环境与拟音的真实性构建“被世界包围”的体验。",
       video: "video/AshNoise-瘟疫传说.mp4",
       poster: "video/posters/AshNoise-瘟疫传说.jpg",
+      source: "https://pan.baidu.com/s/1PAvey34ZGFf1jw0sae3NbA?pwd=dzv6",
       shot: "docs/plague/shot.jpg",
       plan: {
         label: "策划案",
@@ -102,6 +105,7 @@ window.PORTFOLIO = {
       desc: "为《绝区零》风格界面与交互反馈设计的合成器 / UI 音效 Demo。",
       video: "video/绝区零_合成器ui.mp4",
       poster: "video/posters/绝区零_合成器ui.jpg",
+      source: "https://pan.baidu.com/s/1PAvey34ZGFf1jw0sae3NbA?pwd=dzv6",
       shots: [
         "docs/zzz/shot-01.jpg", "docs/zzz/shot-02.jpg", "docs/zzz/shot-03.jpg",
         "docs/zzz/shot-04.jpg", "docs/zzz/shot-05.jpg", "docs/zzz/shot-06.jpg",
@@ -119,6 +123,7 @@ window.PORTFOLIO = {
       desc: "卡牌构筑的策略感 × 回合格斗的爆发感：合成器音色、虫群电弧与界面反馈分层。",
       video: "video/AshNoise-奥雷萨之下.mp4",
       poster: "video/posters/AshNoise-奥雷萨之下.jpg",
+      source: "https://pan.baidu.com/s/1PAvey34ZGFf1jw0sae3NbA?pwd=dzv6",
       shot: "docs/oresa/shot.jpg",
 
       conceptTitle: "奥雷萨之下 · 声音设计理念",
@@ -132,6 +137,7 @@ window.PORTFOLIO = {
       desc: "一镜到底 CG 的氛围渲染与叙事延续：空洞底噪、传送门轰鸣与压迫感递进。",
       video: "video/AshNoise-命运2-遗落之族cg.mp4",
       poster: "video/posters/AshNoise-命运2-遗落之族cg.jpg",
+      source: "https://pan.baidu.com/s/1PAvey34ZGFf1jw0sae3NbA?pwd=dzv6",
       shot: "docs/destiny/shot.jpg",
       req: [],
       conceptTitle: "命运2 · 遗落之族 CG · 声音设计理念",
