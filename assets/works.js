@@ -39,8 +39,8 @@ window.PORTFOLIO = {
     }
   ],
   categories: [
-    { id: "sfx",       name: "音效设计",         en: "SFX · Sound Effect Design" },
-    { id: "audio-plan",name: "音频策划设计",      en: "Audio Direction · Planning" },
+    { id: "sfx",       name: "游戏实机音效重制",         en: "SFX · Sound Effect Design" },
+    { id: "audio-plan",name: "游戏音频策划设计",      en: "Audio Direction · Planning" },
     { id: "synth-ui",  name: "合成器 / UI 音效设计", en: "Synth & UI Sound Design" },
     { id: "cg",        name: "CG 音效设计",       en: "CG Trailer Sound Design" },
     { id: "wwise",     name: "Wwise / UE5 音频集成",  en: "Wwise · Unreal Engine 5 Integration" }
