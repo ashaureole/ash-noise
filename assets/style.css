@@ -959,4 +959,5 @@ li.leaf > .pn-row .pn-toggle{color:rgba(232,180,90,.45)}
 .wx-item{cursor:pointer;user-select:none}
 .wx-item b{color:var(--gold-2);font-weight:700}
 .contact-item .wx-msg{margin-left:12px;font-size:11.5px;color:var(--dim);font-style:normal;white-space:nowrap}
-.wx-item.copied .wx-msg{color:var(--gold)}
+.wx-item.copied .wx-msg{color:var(--gold)}.skill-note{color:var(--muted);font-size:13px;line-height:1.7;margin-top:12px}
+.edu-list p{color:var(--muted);font-size:13.5px;margin-top:4px}
