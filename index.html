@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AshNoise · 高明宇 — 游戏音效设计师作品集</title>
 <meta name="description" content="高明宇（AshNoise）— 游戏音效设计师 / 音频策划 / 合成器·UI 音效设计。作品集：音效设计、音频策划设计、合成器/UI 音效设计、CG 音效设计。">
-<link rel="stylesheet" href="assets/style.css?v=9">
+<link rel="stylesheet" href="assets/style.css?v=10">
 </head>
 <body>
 
@@ -223,14 +223,16 @@
   </div>
   <div class="detail-tabs" id="detailTabs" role="tablist" aria-label="作品内容"></div>
   <div class="detail-body" id="detailBody"></div>
-  <div class="detail-pager" id="detailPager">
-    <button class="pg-btn" id="pgPrev" type="button">← 上一页</button>
-    <span class="pg-info" id="pgInfo"></span>
-    <button class="pg-btn" id="pgNext" type="button">下一页 →</button>
-  </div>
+  <button class="detail-nav detail-prev" id="pgPrev" type="button" aria-label="上一页">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z" fill="currentColor"/></svg>
+  </button>
+  <button class="detail-nav detail-next" id="pgNext" type="button" aria-label="下一页">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4 4.6 4.6z" fill="currentColor"/></svg>
+  </button>
+  <div class="detail-page-info" id="pgInfo"></div>
 </div>
 
-<script src="assets/works.js?v=9"></script>
-<script src="assets/script.js?v=9"></script>
+<script src="assets/works.js?v=10"></script>
+<script src="assets/script.js?v=10"></script>
 </body>
 </html>
