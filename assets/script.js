@@ -159,6 +159,10 @@
   var detailTitle = document.getElementById("detailTitle");
   var detailSub = document.getElementById("detailSub");
   var state = { work: null, sections: [], active: "concept", loadedVideo: false, imgScale: 1 };
+  var detailPager = document.getElementById("detailPager");
+  var pgPrev = document.getElementById("pgPrev");
+  var pgNext = document.getElementById("pgNext");
+  var pgInfo = document.getElementById("pgInfo");
 
   function buildSections(w) {
     var s = w.hideConcept ? [] : [{ id: "concept", label: "设计理念" }];
@@ -206,6 +210,7 @@
     detailBody.innerHTML = "";
     state.sections.forEach(function (s) { detailBody.appendChild(buildPane(w, s)); });
     detailBody.querySelector('[data-pane="' + state.active + '"]').classList.add("active");
+    updatePager();
 
     // 预加载视频
     setTimeout(function () {
@@ -249,6 +254,28 @@
       state.imgScale = 1;
       setTimeout(fitImages, 40);
     }
+    updatePager();
+  }
+
+  function pageStep(dir) {
+    var secs = state.sections || [];
+    var idx = -1;
+    for (var i = 0; i < secs.length; i++) { if (secs[i].id === state.active) { idx = i; break; } }
+    if (idx < 0) return;
+    var next = idx + dir;
+    if (next < 0 || next >= secs.length) return;
+    showTab(secs[next].id);
+  }
+
+  function updatePager() {
+    if (!detailPager) return;
+    var secs = state.sections || [];
+    var idx = -1;
+    for (var i = 0; i < secs.length; i++) { if (secs[i].id === state.active) { idx = i; break; } }
+    if (idx < 0) return;
+    if (pgInfo) pgInfo.textContent = secs[idx].label + " · " + (idx + 1) + " / " + secs.length;
+    if (pgPrev) pgPrev.disabled = (idx <= 0);
+    if (pgNext) pgNext.disabled = (idx >= secs.length - 1);
   }
 
   function tryPlay() {
@@ -394,9 +421,13 @@
   /* ---------- events ---------- */
   document.getElementById("detailClose").addEventListener("click", closeDetail);
   document.getElementById("detailBack").addEventListener("click", closeDetail);
+  if (pgPrev) pgPrev.addEventListener("click", function () { pageStep(-1); });
+  if (pgNext) pgNext.addEventListener("click", function () { pageStep(1); });
   document.addEventListener("keydown", function (e) {
     if (!detail.classList.contains("open")) return;
     if (e.target && e.target.closest && e.target.closest("video")) return;
+    if (e.key === "ArrowLeft") { pageStep(-1); e.preventDefault(); return; }
+    if (e.key === "ArrowRight") { pageStep(1); e.preventDefault(); return; }
     if (e.key === "Escape") { closeDetail(); e.preventDefault(); }
   });
   window.addEventListener("resize", function () {

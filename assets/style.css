@@ -961,3 +961,8 @@ li.leaf > .pn-row .pn-toggle{color:rgba(232,180,90,.45)}
 .contact-item .wx-msg{margin-left:12px;font-size:11.5px;color:var(--dim);font-style:normal;white-space:nowrap}
 .wx-item.copied .wx-msg{color:var(--gold)}.skill-note{color:var(--muted);font-size:13px;line-height:1.7;margin-top:12px}
 .edu-list p{color:var(--muted);font-size:13.5px;margin-top:4px}
+.detail-pager{flex:0 0 auto;display:flex;align-items:center;justify-content:center;gap:14px;padding:10px 16px;border-top:1px solid var(--line);background:rgba(10,13,17,.92)}
+.pg-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:999px;border:1px solid var(--line-strong);background:rgba(255,255,255,.03);color:var(--text);font-size:13.5px;font-family:var(--font);cursor:pointer;transition:color .2s,border-color .2s,background .2s}
+.pg-btn:hover:not(:disabled){color:var(--gold);border-color:var(--gold);background:rgba(232,180,90,.08)}
+.pg-btn:disabled{opacity:.32;cursor:not-allowed}
+.pg-info{color:var(--muted);font-size:12.5px;min-width:120px;text-align:center}
