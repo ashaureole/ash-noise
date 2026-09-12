@@ -242,8 +242,9 @@
     var cur = detailBody.querySelector('[data-pane="' + id + '"]');
     if (cur) { cur.classList.add("active"); cur.scrollTop = 0; }
     if (prev === "video") {
-      var v = detailBody.querySelector(".detail-pane.active video");
-      if (v) v.pause();
+      var prevPane = detailBody.querySelector('[data-pane="video"]');
+      var pv = prevPane ? prevPane.querySelector("video") : null;
+      if (pv) pv.pause();
     }
     if (id === "video") {
       var v2 = detailBody.querySelector('[data-pane="video"] video');
@@ -264,6 +265,7 @@
     if (idx < 0) return;
     var next = idx + dir;
     if (next < 0 || next >= secs.length) return;
+    detailBody.querySelectorAll("video").forEach(function (vv) { vv.pause(); });
     showTab(secs[next].id);
   }
 
