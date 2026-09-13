@@ -158,7 +158,7 @@
   var detailTabs = document.getElementById("detailTabs");
   var detailTitle = document.getElementById("detailTitle");
   var detailSub = document.getElementById("detailSub");
-  var state = { work: null, sections: [], active: "concept", loadedVideo: false, imgScale: 1 };
+  var state = { work: null, sections: [], active: "concept", loadedVideo: false, imgScale: 1, noAutoPlay: false };
   var detailPager = document.getElementById("detailPager");
   var pgPrev = document.getElementById("pgPrev");
   var pgNext = document.getElementById("pgNext");
@@ -175,7 +175,9 @@
       });
     }
     var vids = (w.videos && w.videos.length) ? w.videos : [{ label: "视频", src: w.video, poster: w.poster }];
-    s.push({ id: "video", label: "视频", videos: vids });
+    vids.forEach(function (v, i) {
+      s.push({ id: i === 0 ? "video" : "video" + (i + 1), label: (vids.length > 1 ? (v.label || ("视频 " + (i + 1))) : "视频"), videos: [v] });
+    });
     if (w.req && w.req.length) {
       s.push({ id: "req", label: "音频需求表", images: w.req, many: w.req.length > 1, cssw: 1500, caption: "音频需求表", dark: false });
     }
@@ -217,19 +219,19 @@
 
     // 预加载视频
     setTimeout(function () {
-      var v = detailBody.querySelector('[data-pane="video"] video');
+      var vp = detailBody.querySelector('[data-pane^="video"]');
+      var v = vp ? vp.querySelector("video") : null;
       if (v && !v.getAttribute("src")) { v.src = (w.videos && w.videos[0]) ? w.videos[0].src : w.video; v.load(); }
     }, 30);
     // 默认展示视频时尝试自动播放
-    if (state.active === "video") setTimeout(tryPlay, 400);
+    if (state.active.indexOf("video") === 0) setTimeout(tryPlay, 400);
   }
 
   function closeDetail() {
     detail.classList.remove("open");
     detail.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
-    var v = detailBody.querySelector("video");
-    if (v) { v.pause(); v.removeAttribute("src"); v.load(); }
+    detailBody.querySelectorAll("video").forEach(function (v) { v.pause(); v.removeAttribute("src"); v.load(); });
     state.work = null;
   }
 
@@ -244,15 +246,20 @@
     panes.forEach(function (p) { p.classList.remove("active"); });
     var cur = detailBody.querySelector('[data-pane="' + id + '"]');
     if (cur) { cur.classList.add("active"); cur.scrollTop = 0; }
-    if (prev === "video") {
-      var prevPane = detailBody.querySelector('[data-pane="video"]');
+    if (prev.indexOf("video") === 0) {
+      var prevPane = detailBody.querySelector('[data-pane="' + prev + '"]');
       var pv = prevPane ? prevPane.querySelector("video") : null;
       if (pv) pv.pause();
     }
-    if (id === "video") {
-      var v2 = detailBody.querySelector('[data-pane="video"] video');
-      if (v2 && !v2.getAttribute("src")) { v2.src = w.video; v2.load(); }
-      setTimeout(tryPlay, 50);
+    if (id.indexOf("video") === 0) {
+      var v2 = detailBody.querySelector('[data-pane="' + id + '"] video');
+      if (v2 && !v2.getAttribute("src")) {
+        var curSec = null;
+        state.sections.forEach(function (ss) { if (ss.id === id) curSec = ss; });
+        v2.src = (curSec && curSec.videos && curSec.videos[0]) ? curSec.videos[0].src : w.video;
+        v2.load();
+      }
+      if (!state.noAutoPlay) setTimeout(tryPlay, 50);
     }
     if (id === "req" || id === "shot" || id === "plan" || id === "cert") {
       state.imgScale = 1;
@@ -269,7 +276,9 @@
     var next = idx + dir;
     if (next < 0 || next >= secs.length) return;
     detailBody.querySelectorAll("video").forEach(function (vv) { vv.pause(); });
+    state.noAutoPlay = true;
     showTab(secs[next].id);
+    state.noAutoPlay = false;
   }
 
   function updatePager() {
@@ -296,7 +305,7 @@
     var pane = el("div", "detail-pane pane-" + s.id);
     pane.dataset.pane = s.id;
 
-    if (s.id === "video") {
+    if (s.id.indexOf("video") === 0) {
       var vids = (s.videos && s.videos.length) ? s.videos : [{ label: "视频", src: w.video, poster: w.poster }];
       var vIdx = 0;
       var seg = null;
