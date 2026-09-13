@@ -159,7 +159,7 @@ window.PORTFOLIO = {
       req: ["docs/ue/req-01.png"],
       cert: {
         label: "Wwise 证书",
-        image: "docs/wwise/cert.png",
+        image: "docs/wwise/cert.png?v=2",
         cssw: 1500,
         caption: "Wwise Fundamentals · Certified End User（Audiokinetic · 2026.09）"
       },
