@@ -157,6 +157,12 @@ window.PORTFOLIO = {
       video: "video/ue工程demo.mp4",
       poster: "video/posters/ue工程demo.jpg",
       req: ["docs/ue/req-01.png"],
+      cert: {
+        label: "Wwise 证书",
+        image: "docs/wwise/cert.png",
+        cssw: 1500,
+        caption: "Wwise Fundamentals · Certified End User（Audiokinetic · 2026.09）"
+      },
       conceptTitle: "UE 工程 · Wwise 集成说明",
       concept: "范围：仅主关卡 open_world_LSP_demo，Wwise 工程为 Salt3rd_WwiseProject。\nWwise 现状：Events 共 30 个（含 Footstep、Radio_Play_Stop）；脚步 Switch Group Surface（Grass / Dirt / Wood / Water）；火球事件内已做 Stop 链；人声容器限 1 实例。\n火球播放序列：Cast 蓄能（持续）→ Shoot（内部先 Stop Cast 再播）→ Blast（内部先 Stop Shoot 再播），UE 只需按节奏 Post 三个事件。\n脚步播放：SetSwitch(Surface, 地表) + Post Footstep，原 4 个地表事件已并入。\n收音机播放：开 = Radio_Toggle + Radio_Play；关 = Radio_Toggle + Radio_Play_Stop（由 UE 判断开关状态）。\n人声防叠：VO_Player_Hurt / VO_Player_Grunt 已设 Limit=1，新声自动打断旧声。\n制作状态：未开始 / 制作中 / 已制作 / 已导入 / 已验收。"
     }

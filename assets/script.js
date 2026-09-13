@@ -176,6 +176,9 @@
     }
     var vids = (w.videos && w.videos.length) ? w.videos : [{ label: "视频", src: w.video, poster: w.poster }];
     s.push({ id: "video", label: "视频", videos: vids });
+    if (w.cert) {
+      s.push({ id: "cert", label: w.cert.label || "证书", image: w.cert.image, cssw: w.cert.cssw || 1500, caption: w.cert.caption || "证书", dark: false });
+    }
     if (w.req && w.req.length) {
       s.push({ id: "req", label: "音频需求表", images: w.req, many: w.req.length > 1, cssw: 1500, caption: "音频需求表", dark: false });
     }
@@ -251,7 +254,7 @@
       if (v2 && !v2.getAttribute("src")) { v2.src = w.video; v2.load(); }
       setTimeout(tryPlay, 50);
     }
-    if (id === "req" || id === "shot" || id === "plan") {
+    if (id === "req" || id === "shot" || id === "plan" || id === "cert") {
       state.imgScale = 1;
       setTimeout(fitImages, 40);
     }
@@ -270,7 +273,7 @@
   }
 
   function updatePager() {
-    if (!detailPager) return;
+    if (!pgInfo || !pgPrev || !pgNext) return;
     var secs = state.sections || [];
     var idx = -1;
     for (var i = 0; i < secs.length; i++) { if (secs[i].id === state.active) { idx = i; break; } }
