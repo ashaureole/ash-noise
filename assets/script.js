@@ -176,9 +176,6 @@
     }
     var vids = (w.videos && w.videos.length) ? w.videos : [{ label: "视频", src: w.video, poster: w.poster }];
     s.push({ id: "video", label: "视频", videos: vids });
-    if (w.cert) {
-      s.push({ id: "cert", label: w.cert.label || "证书", image: w.cert.image, cssw: w.cert.cssw || 1500, caption: w.cert.caption || "证书", dark: false });
-    }
     if (w.req && w.req.length) {
       s.push({ id: "req", label: "音频需求表", images: w.req, many: w.req.length > 1, cssw: 1500, caption: "音频需求表", dark: false });
     }
@@ -186,6 +183,9 @@
       s.push({ id: "shot", label: "工程截图", images: w.shots, many: w.shots.length > 1, cssw: 1600, dark: true, caption: "工程截图" });
     } else if (w.shot) {
       s.push({ id: "shot", label: "工程截图", image: w.shot, cssw: 1600, dark: true, caption: "工程截图" });
+    }
+    if (w.cert) {
+      s.push({ id: "cert", label: w.cert.label || "证书", image: w.cert.image, cssw: w.cert.cssw || 1500, caption: w.cert.caption || "证书", dark: false });
     }
     return s;
   }
