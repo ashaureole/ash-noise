@@ -5,9 +5,9 @@
 window.PORTFOLIO = {
   heroBg: [
     "assets/hero-bg.jpg",
-    "assets/hero/destiny-1.jpg", "assets/hero/re9-1.jpg", "assets/hero/plague-1.jpg", "assets/hero/oresa-1.jpg", "assets/hero/sifu-1.jpg",
-    "assets/hero/destiny-2.jpg", "assets/hero/re9-2.jpg", "assets/hero/plague-2.jpg", "assets/hero/oresa-2.jpg", "assets/hero/sifu-2.jpg",
-    "assets/hero/destiny-3.jpg", "assets/hero/re9-3.jpg", "assets/hero/plague-3.jpg", "assets/hero/oresa-3.jpg", "assets/hero/sifu-3.jpg"
+    "assets/hero/destiny-1.jpg", "assets/hero/re9-1.jpg", "assets/hero/plague-1.jpg", "assets/hero/sifu-1.jpg",
+    "assets/hero/destiny-2.jpg", "assets/hero/re9-2.jpg", "assets/hero/plague-2.jpg", "assets/hero/sifu-2.jpg",
+    "assets/hero/destiny-3.jpg", "assets/hero/re9-3.jpg", "assets/hero/plague-3.jpg", "assets/hero/sifu-3.jpg"
   ],
   heroInterval: 6000,
   daily: [
@@ -113,21 +113,6 @@ window.PORTFOLIO = {
       ],
       conceptTitle: "绝区零 · UI · 声音设计理念",
       concept: "绝区零作为一款经典二游，其音效设计需要与游戏整体的视觉深度绑定，游戏大量汲取 2000 年左右的流行文化，所以在整体 UI 音效的设计上我选择尽可能的给到未来但又复古的感觉。让声音总体感觉 Q 弹，也蕴含一些复古物件的发声质感。"
-    },
-    {
-      id: "oresa",
-      title: "《奥雷萨之下》",
-      tag: "UI 音效设计",
-      cat: "synth-ui",
-      dur: "1:27",
-      desc: "卡牌构筑的策略感 × 回合格斗的爆发感：合成器音色、虫群电弧与界面反馈分层。",
-      video: "video/AshNoise-奥雷萨之下.mp4",
-      poster: "video/posters/AshNoise-奥雷萨之下.jpg",
-      source: "https://pan.baidu.com/s/1PAvey34ZGFf1jw0sae3NbA?pwd=dzv6",
-      shot: "docs/oresa/shot.jpg",
-
-      conceptTitle: "奥雷萨之下 · 声音设计理念",
-      concept: "在《奥雷萨之下》这段声音中，我以“卡牌构筑的策略感与回合格斗的爆发感并重”为取向。要谨慎地通过选牌、升级与秘物构筑卡组，是 Rogue 与卡牌、回合制战术的复合体验。因此我把声音分成互有落差的几层：洗牌、出牌与界面反馈传递卡组操作的“策略手感”；攻击、命中与喷血等反馈提供果断而利落的打击体验；怪物与能量体系则以嗡鸣、虫群与电弧渲染对手的威胁与压迫。声音在操作的克制感与战斗的爆发感之间形成对比，以贴合“谋定后动、贴身制敌”的玩法节奏。"
     },
     {
       id: "destiny",
